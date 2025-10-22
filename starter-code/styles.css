@@ -1,10 +1,136 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url(assets/fonts/Rubik-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url(assets/fonts/Rubik-Italic-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url(assets/fonts/static/Rubik-Regular.ttf) format('truetype');
+    font-style: normal;
+}
 
 
+@font-face {
+    font-family: 'Rubik';
+    src: url(assets/fonts/static/Rubik-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url(assets/fonts/static/Rubik-Italic.ttf) format('truetype');
+    font-style: italic;
+}
+
+
+:root {
+    --purple-600: rgb(167, 41, 245);
+    --blue-900: rgb(45, 57, 73);
+    --blue-850: rgb(59, 77, 102);
+    --blue-300: rgb(171, 193, 225);
+    --grey-500: rgb(98, 108,127);
+    --grey-50: rgb(244, 246, 250);
+
+    --dark-bg-clr: rgb(49, 62, 81);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--dark-bg-clr);
+    background-image: url(assets/images/pattern-background-mobile-dark.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    height: 98vh;
+    line-height: 1;
+}
+
+
+h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+h2 {
+    color: var(--blue-300);
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+body.light {
+    background-image: url(assets/images/pattern-background-desktop-light.svg);
+    background-color: #fff;
+    color: var(--blue-900);
+}
+
+h2.light {
+    color: var(--grey-500);
+}
+
+.heading-bold {
+    font-weight: 500;
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url(assets/images/pattern-background-tablet-dark.svg);
+        background-size: auto;
+        font-size: 2.8rem;
+    }
+    body.light {
+        background-image: url(assets/images/pattern-background-tablet-light.svg);
+    }
+
+    h1 {
+        font-size: 6.4rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-image: url(assets/images/pattern-background-desktop-dark.svg);
+        background-size: cover;
+    }
+    body.light {
+        background-image: url(assets/images/pattern-background-desktop-light.svg);
+    }
+
+}
 /* toggle switch */
 .theme-toggle {
     display: flex;
     gap: 6px;
     align-items: center;
+    justify-content: flex-end;
 }
 .switch {
     position: relative;
@@ -26,7 +152,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #A729F5;
+    background-color: var(--purple-600);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -45,11 +171,11 @@
 
 
 input:checked + .slider {
-  background-color: #A729F5;
+  background-color: var(--purple-600);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 2px #A729F5;
+  box-shadow: 0 0 2px var(--purple-600);
 }
 
 input:checked + .slider:before {
