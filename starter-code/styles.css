@@ -1,3 +1,11 @@
+
+
+/* toggle switch */
+.theme-toggle {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
 .switch {
     position: relative;
     display: inline-block;
@@ -56,4 +64,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.toggle-img {
+    user-select: none;
 }
