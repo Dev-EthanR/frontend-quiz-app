@@ -14,39 +14,75 @@
     <title>Frontend Mentor | Frontend quiz app</title>
   </head>
   <body>
-    <div class="theme-toggle">
-      <img class="toggle-img" src="assets/images/icon-sun-light.svg" alt="" />
-      <label class="switch">
-        <input type="checkbox" checked />
-        <span class="slider round"></span>
-      </label>
-      <img class="toggle-img" src="assets/images/icon-moon-light.svg" alt="" />
-    </div>
-    <!-- Quiz menu start -->
-    <h1>
-      Welcome to the <br /><span class="heading-bold">Frontend Quiz!</span>
-    </h1>
-    <h2>Pick a subject to get started.</h2>
-    HTML CSS JavaScript Accessibility
+    <header class="header-container">
+      <!-- toggle theme switch -->
+      <div class="theme-toggle">
+        <img class="toggle-img" src="assets/images/icon-sun-light.svg" alt="" />
+        <label class="switch">
+          <input type="checkbox" checked />
+          <span class="slider round"></span>
+        </label>
+        <img
+          class="toggle-img"
+          src="assets/images/icon-moon-light.svg"
+          alt=""
+        />
+      </div>
+    </header>
+    <main class="container">
+      <!-- Quiz menu start -->
+      <div>
+        <h1>
+          Welcome to the <br /><span class="heading-bold">Frontend Quiz!</span>
+        </h1>
+        <h2>Pick a subject to get started.</h2>
+      </div>
+      <div class="quiz-subjects">
+        <button class="btn">
+          <span class="subject-icons orange">
+            <img src="assets/images/icon-html.svg" alt="" />
+          </span>
 
-    <!-- Quiz menu end -->
+          <span class="subject-text">HTML</span>
+        </button>
+        <button class="btn">
+          <span class="subject-icons green">
+            <img src="assets/images/icon-css.svg" alt="" />
+          </span>
+          <span class="subject-text">CSS</span>
+        </button>
+        <button class="btn">
+          <span class="subject-icons blue">
+            <img src="assets/images/icon-js.svg" alt="" />
+          </span>
+          <span class="subject-text">JavaScript</span>
+        </button>
+        <button class="btn">
+          <span class="subject-icons purple">
+            <img src="assets/images/icon-accessibility.svg" alt="" />
+          </span>
+          <span class="subject-text">Accessibility</span>
+        </button>
+      </div>
+      <!-- Quiz menu end -->
 
-    <!-- Quiz question start -->
+      <!-- Quiz question start -->
 
-    Question
-    <!-- number -->
-    of 10 A B C D Submit answer
+      <!-- Question -->
+      <!-- number -->
+      <!-- of 10 A B C D Submit answer -->
 
-    <!-- Quiz question end -->
+      <!-- Quiz question end -->
 
-    <!-- Quiz completed start -->
+      <!-- Quiz completed start -->
 
-    Quiz completed You scored...
+      <!-- Quiz completed You scored... -->
 
-    <!-- score -->
-    out of 10
+      <!-- score -->
+      <!-- out of 10 -->
 
-    <!-- Quiz completed end -->
+      <!-- Quiz completed end -->
+    </main>
     <script src="index.js"></script>
   </body>
 </html>
