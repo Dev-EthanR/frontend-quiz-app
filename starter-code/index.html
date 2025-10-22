@@ -15,74 +15,114 @@
   </head>
   <body>
     <header class="header-container">
+      <div id="subject-header">
+        <div class="quiz-subject">
+          <span class="subject-icon">
+            <img id="header-icon" src="" alt="" />
+          </span>
+          <h1 class="heading-bold" id="heading-text"></h1>
+        </div>
+      </div>
+
       <!-- toggle theme switch -->
       <div class="theme-toggle">
-        <img class="toggle-img" src="assets/images/icon-sun-light.svg" alt="" />
+        <img
+          id="sun-icon"
+          class="toggle-img"
+          src="assets/images/icon-sun-light.svg"
+          alt=""
+        />
         <label class="switch">
-          <input type="checkbox" checked />
+          <input id="switch" type="checkbox" checked />
           <span class="slider round"></span>
         </label>
         <img
+          id="moon-icon"
           class="toggle-img"
           src="assets/images/icon-moon-light.svg"
           alt=""
         />
       </div>
     </header>
-    <main class="container">
-      <!-- Quiz menu start -->
+    <!-- Quiz menu start -->
+    <main class="container" id="menu">
       <div>
         <h1>
           Welcome to the <br /><span class="heading-bold">Frontend Quiz!</span>
         </h1>
-        <h2>Pick a subject to get started.</h2>
+        <h2 class="sub-heading">Pick a subject to get started.</h2>
       </div>
-      <div class="quiz-subjects">
-        <button class="btn">
+      <div class="menu-subjects">
+        <button class="btn btn-subject">
           <span class="subject-icons orange">
             <img src="assets/images/icon-html.svg" alt="" />
           </span>
 
           <span class="subject-text">HTML</span>
         </button>
-        <button class="btn">
+        <button class="btn btn-subject">
           <span class="subject-icons green">
             <img src="assets/images/icon-css.svg" alt="" />
           </span>
           <span class="subject-text">CSS</span>
         </button>
-        <button class="btn">
+        <button class="btn btn-subject">
           <span class="subject-icons blue">
             <img src="assets/images/icon-js.svg" alt="" />
           </span>
           <span class="subject-text">JavaScript</span>
         </button>
-        <button class="btn">
+        <button class="btn btn-subject">
           <span class="subject-icons purple">
             <img src="assets/images/icon-accessibility.svg" alt="" />
           </span>
           <span class="subject-text">Accessibility</span>
         </button>
       </div>
-      <!-- Quiz menu end -->
-
-      <!-- Quiz question start -->
-
-      <!-- Question -->
-      <!-- number -->
-      <!-- of 10 A B C D Submit answer -->
-
-      <!-- Quiz question end -->
-
-      <!-- Quiz completed start -->
-
-      <!-- Quiz completed You scored... -->
-
-      <!-- score -->
-      <!-- out of 10 -->
-
-      <!-- Quiz completed end -->
     </main>
+    <!-- Quiz menu end -->
+
+    <!-- number -->
+    <!-- of 10 A B C D -->
+
+    <!-- Quiz completed start -->
+
+    <!-- Quiz completed You scored... -->
+
+    <!-- score -->
+    <!-- out of 10 -->
+
+    <!-- Quiz completed end -->
+    <!-- Quiz question start -->
+    <section class="container" id="quiz">
+      <div>
+        <h2>Question 1 of 10</h2>
+        <h3>Question</h3>
+      </div>
+      <div class="quiz-subjects">
+        <button class="btn">
+          <span class="quiz-icons grey">A</span>
+          <span id="option-one">HTML</span>
+        </button>
+        <button class="btn">
+          <span class="quiz-icons grey">B</span>
+          <span id="option-two">CSS</span>
+        </button>
+        <button class="btn">
+          <span class="quiz-icons grey">C</span>
+
+          <span id="option-three">JavaScript</span>
+        </button>
+        <button class="btn">
+          <span class="quiz-icons grey">D</span>
+
+          <span id="option-four">Accessibility</span>
+        </button>
+        <button class="btn btn-answer">Submit answer</button>
+      </div>
+    </section>
+    <!-- Quiz question end -->
+
     <script src="index.js"></script>
   </body>
 </html>

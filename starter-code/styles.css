@@ -81,7 +81,14 @@ h2 {
     font-style: italic;
     font-weight: 300;
     line-height: 1.5;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 2.4rem;
 }
 
 body.light {
@@ -93,7 +100,9 @@ body.light {
 h2.light {
     color: var(--grey-500);
 }
-
+.sub-heading {
+    margin-bottom: 3rem;
+}
 .heading-bold {
     font-weight: 500;
 }
@@ -116,6 +125,10 @@ h2.light {
         font-size: 2rem;
     }
 
+    h3 {
+        font-size: 3.6rem;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -133,7 +146,47 @@ h2.light {
         margin-bottom: 4rem;
     }
 
+    h2 {
+        margin-bottom: 2rem;
+    }
+
 }
+/* containers */
+.header-container, .container {
+    padding: 2rem;
+}
+
+.header-gap {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+    .header-container, .container {
+        padding: 4rem;
+    }
+
+    .header-container {
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header-container {
+        padding-bottom: 5rem;
+    }
+    .container {
+        display: flex;
+        justify-content: center; 
+        align-items: flex-start;
+        gap: 12.8rem;
+        width: 100%;
+    }
+    .menu-subjects {
+        width: 564px;
+    }
+}
+
 /* toggle switch */
 .theme-toggle {
     display: flex;
@@ -228,37 +281,6 @@ input:checked + .slider:before {
     }
 }
 
-/* containers */
-.header-container, .container {
-    padding: 2rem;
-}
-
-@media screen and (min-width: 768px) {
-    .header-container, .container {
-        padding: 4rem;
-    }
-
-    .header-container {
-        padding-bottom: 0;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .header-container {
-        padding-bottom: 5rem;
-    }
-    .container {
-        display: flex;
-        justify-content: center; 
-        align-items: flex-start;
-        gap: 12.8rem;
-        width: 100%;
-    }
-    .quiz-subjects {
-        width: 564px;
-    }
-}
-
 /* Buttons */
 
 .btn {
@@ -277,21 +299,42 @@ input:checked + .slider:before {
     padding: 1.6rem;
     cursor: pointer;
     user-select: none;
+
+}
+.btn-answer {
+    background-color: var(--purple-600);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 3.2rem;
+    max-height: 5.6rem;
+}
+.quiz-subjects .btn {
+    padding: 1.7rem 2.2rem;
+    border-radius: 12px;
 }
 
-.btn.light {
+.btn.light:not(.btn-answer) {
     background-color: #fff;
+}
+
+.subject-icons, .quiz-icons, .subject-icon {
+    max-height: 4rem; 
+    max-width: 4rem; 
+    padding: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .subject-icons {
     border-radius: 12px;
-    padding: 1.6rem;
-    max-height: 4rem; 
-    max-width: 4rem; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+   
+}
+
+.quiz-icons {
+    border-radius: 8px;
 }
 .subject-icons > img {
     width: 2.8rem;
@@ -312,6 +355,11 @@ input:checked + .slider:before {
     background-color: rgb(246, 231, 255);
 }
 
+.grey {
+    background-color: var(--grey-50);
+    color: var(--grey-500);
+}
+
 @media screen and (min-width: 768px) {
     .btn {
         gap: 3.2rem;
@@ -322,9 +370,45 @@ input:checked + .slider:before {
         height: 4rem;
     }
 
-    .subject-icons {
+    .subject-icons, .quiz-icons,  .subject-icon  {
         padding: 1.6rem;
         max-height: 5.6rem; 
         max-width: 5.6rem; 
+    }
+
+    .quiz-icons {
+        padding: 1.2rem 1.8rem;
+    }
+
+    .btn-answer {
+        max-height: 9.6rem;
+    }
+}
+
+/* Quiz */
+#quiz, #subject-header {display: none;}
+
+.quiz-subject {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+}
+
+.subject-icon {
+    border-radius: 5px;
+}
+.subject-icon > img {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.quiz-subject > h1 {
+   font-size: 1.8rem;
+   margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .quiz-subject > h1 {
+        font-size: 2.8rem;
     }
 }
