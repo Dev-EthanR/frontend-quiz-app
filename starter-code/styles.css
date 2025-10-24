@@ -34,7 +34,7 @@
 
 
 :root {
-    --purple-600: rgb(167, 41, 245);
+    --purple-600: hsl(277, 91%, 56%);
     --blue-900: rgb(45, 57, 73);
     --blue-850: rgb(59, 77, 102);
     --blue-300: rgb(171, 193, 225);
@@ -308,6 +308,7 @@ input:checked + .slider:before {
     justify-content: center;
     padding: 3.2rem;
     max-height: 5.6rem;
+    margin-bottom: 2.2rem;
 }
 .quiz-subjects .btn {
     padding: 1.7rem 2.2rem;
@@ -358,6 +359,40 @@ input:checked + .slider:before {
 .grey {
     background-color: var(--grey-50);
     color: var(--grey-500);
+}
+
+.btn:hover:not(.correct-answer):not(.incorrect-answer) {
+    outline: 2px solid hsl(277, 91%, 70%);
+}
+
+.btn-answer:hover {
+    background-color: hsl(277, 91%, 50%);
+    outline: none;
+}
+
+.btn:hover:not(.correct-answer):not(.incorrect-answer) .quiz-icons{
+    background-color: hsl(277, 91%, 70%);
+    color: #fff;
+}
+
+.selected-option .quiz-icons{
+    background-color: var(--purple-600);
+    color: #fff;
+}
+.selected-option {
+    outline: 2px solid var(--purple-600);
+}
+
+.option-btn {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    width: 100%;
+}
+
+.answer-state {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
@@ -411,4 +446,34 @@ input:checked + .slider:before {
     .quiz-subject > h1 {
         font-size: 2.8rem;
     }
+}
+
+/* checking */
+
+.error-status {
+    display: none;
+    width: 100%;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.correct-answer .quiz-icons {
+    background-color: hsl(151, 68%, 52%);
+    color: #fff;
+}
+.correct-answer {
+    outline: 2px solid hsl(151, 68%, 52%);
+}
+
+.incorrect-answer .quiz-icons {
+    background-color: hsl(0, 82%, 63%);
+    color: #fff;
+}
+.incorrect-answer {
+    outline: 2px solid hsl(0, 82%, 63%);
 }
