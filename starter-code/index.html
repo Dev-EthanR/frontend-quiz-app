@@ -45,41 +45,44 @@
       </div>
     </header>
     <!-- Quiz menu start -->
-    <main class="container" id="menu">
-      <div>
-        <h1>
-          Welcome to the <br /><span class="heading-bold">Frontend Quiz!</span>
-        </h1>
-        <h2 class="sub-heading">Pick a subject to get started.</h2>
-      </div>
-      <div class="menu-subjects">
-        <button class="btn btn-subject">
-          <span class="subject-icons orange">
-            <img src="assets/images/icon-html.svg" alt="" />
-          </span>
-
-          <span class="subject-text">HTML</span>
-        </button>
-        <button class="btn btn-subject">
-          <span class="subject-icons green">
-            <img src="assets/images/icon-css.svg" alt="" />
-          </span>
-          <span class="subject-text">CSS</span>
-        </button>
-        <button class="btn btn-subject">
-          <span class="subject-icons blue">
-            <img src="assets/images/icon-js.svg" alt="" />
-          </span>
-          <span class="subject-text">JavaScript</span>
-        </button>
-        <button class="btn btn-subject">
-          <span class="subject-icons purple">
-            <img src="assets/images/icon-accessibility.svg" alt="" />
-          </span>
-          <span class="subject-text">Accessibility</span>
-        </button>
-      </div>
-    </main>
+    <div id="menu">
+      <main class="container">
+        <div>
+          <h1>
+            Welcome to the <br /><span class="heading-bold"
+              >Frontend Quiz!</span
+            >
+          </h1>
+          <h2 class="sub-heading">Pick a subject to get started.</h2>
+        </div>
+        <div class="menu-subjects">
+          <button class="btn btn-subject">
+            <span class="subject-icons orange">
+              <img src="assets/images/icon-html.svg" alt="" />
+            </span>
+            <span class="subject-text">HTML</span>
+          </button>
+          <button class="btn btn-subject">
+            <span class="subject-icons green">
+              <img src="assets/images/icon-css.svg" alt="" />
+            </span>
+            <span class="subject-text">CSS</span>
+          </button>
+          <button class="btn btn-subject">
+            <span class="subject-icons blue">
+              <img src="assets/images/icon-js.svg" alt="" />
+            </span>
+            <span class="subject-text">JavaScript</span>
+          </button>
+          <button class="btn btn-subject">
+            <span class="subject-icons purple">
+              <img src="assets/images/icon-accessibility.svg" alt="" />
+            </span>
+            <span class="subject-text">Accessibility</span>
+          </button>
+        </div>
+      </main>
+    </div>
     <!-- Quiz question start -->
     <section class="container" id="quiz">
       <div>
@@ -121,41 +124,29 @@
       </div>
     </section>
     <!-- Quiz question end -->
-    <section class="container" id="quiz">
-      <div>
-        <h2 id="result-title">Quiz completed</h2>
-      </div>
-      <div class="quiz-subjects">
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">A</span>
-            <span id="option-1">HTML</span>
+    <section class="container" id="results">
+      <div class="result-section">
+        <div class="result-header">
+          <h2 class="result-title">
+            Quiz completed <br /><span class="heading-bold">You scored...</span>
+          </h2>
+        </div>
+        <div class="result-con">
+          <div class="result-screen">
+            <div class="result-container">
+              <div class="subject-title">
+                <span class="result-subject-icon">
+                  <img id="result-subject-icon" src="" alt="" />
+                </span>
+                <h3 class="result-subject-title" id="subjectTitle"></h3>
+              </div>
+              <p class="score-text" id="score">9</p>
+              <p class="score-footer">
+                out of <span id="totalQuestions">10</span>
+              </p>
+            </div>
           </div>
-        </button>
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">B</span>
-            <span id="option-2">CSS</span>
-          </div>
-        </button>
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">C</span>
-            <span id="option-3">JavaScript</span>
-          </div>
-        </button>
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">D</span>
-            <span id="option-4">Accessibility</span>
-          </div>
-        </button>
-        <button class="btn btn-answer" id="submitAnswer">Submit answer</button>
-        <div class="error-status" id="error">
-          <div class="flex-center">
-            <img src="assets/images/icon-error.svg" alt="" />
-            <p id="error-msg"></p>
-          </div>
+          <button class="btn btn-answer" id="playAgain">Play Again</button>
         </div>
       </div>
     </section>

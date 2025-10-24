@@ -4,6 +4,8 @@ const toggleSwitch = document.getElementById('switch');
 
 const menu = document.getElementById('menu');
 const quiz = document.getElementById('quiz');
+const resultElement = document.getElementById('results');
+
 const subjectButtons = document.querySelectorAll('.btn-subject');
 const quizButtons = document.querySelectorAll('.option-btn');
 const submitBtn = document.getElementById('submitAnswer');
@@ -20,6 +22,8 @@ incorrectSpanElement.classList.add('feedback-icon');
 
 correctSpanElement.appendChild(correctImgElement);
 incorrectSpanElement.appendChild(incorrectImgElement);
+
+mainMenu();
 
 const headerImageBackgroundColor = {
     html: 'orange',
@@ -52,23 +56,35 @@ toggleSwitch.addEventListener('change', function() {
 
 
 // call the data from the menu that was pressed
-subjectButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        let selectedSubject = this.lastElementChild.textContent;
-        subject = selectedSubject;
-        
-        getData().then(data => {
-            menu.style.display = 'none';
-            quiz.style.display = 'block';
-            data.quizzes.forEach(d => {
-                if(d.title === subject) {
-                    handleData(d);
-                    return;
-                }
+function mainMenu(){
+    subjectButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            let selectedSubject = this.lastElementChild.textContent;
+            subject = selectedSubject;
+            
+            getData().then(data => {
+                menu.style.display = 'none';
+                quiz.style.display = 'block';
+                data.quizzes.forEach(d => {
+                    if(d.title === subject) {
+                        handleData(d);
+                        return;
+                    }
+                });
             });
-        });
-    })
-});
+        })
+    });
+}
+
+
+document.getElementById('playAgain').addEventListener('click', function() {
+    resultElement.style.display = 'none';
+    menu.style.display = 'block';
+    questionCount = 1;
+    points = 0;
+    mainMenu();
+
+})
 
 // get the data
 async function getData() {
@@ -81,6 +97,7 @@ function handleData(questions) {
     displayQuestions(questions.questions);
 }
 
+const subjectTitle = {}
 
 // change the header title based off the quiz title
 function changeHeader(title, icon){
@@ -90,12 +107,13 @@ function changeHeader(title, icon){
     const headingText = document.getElementById("heading-text");
     const headerContainer = document.querySelector('.header-container')
 
-    let background = headerImageBackgroundColor[title.toLowerCase()]
-    headerIcon.src = icon;
-    headingText.textContent = title;
+    let background = subjectTitle.background = headerImageBackgroundColor[title.toLowerCase()]
+    headerIcon.src = subjectTitle.icon = icon;
+    headingText.textContent = subjectTitle.text = title;
     iconBackground.classList.add(background);
     subjectHeader.style.display = 'block';
 
+    
     headerContainer.classList.add('header-gap');
 }
 
@@ -106,7 +124,7 @@ class quizQuestions {
 
     handleOptions() {
         const currentQuestionNumber = questionCount - 1;
-        for(let i = 1; i < this.#question[currentQuestionNumber].options.length; i++){
+        for(let i = 1; i < this.#question[currentQuestionNumber].options.length+1; i++){
             const optionElement = document.getElementById(`option-${i}`);
             optionElement.textContent = this.#question[currentQuestionNumber].options[i-1];
         }
@@ -121,7 +139,7 @@ class quizQuestions {
 // Display the questions 
 function displayQuestions(question) {
     if(questionCount > question.length) {
-        // result()
+        result()
         return;
     }
     const displayQuestion = document.getElementById('question');
@@ -151,6 +169,8 @@ function setupOptions() {
                 btn.parentNode.classList.add('selected-option');   
                 option = this.lastElementChild.textContent;       
             }       
+            
+            
         })
 }
 // submit anwswer button
@@ -212,4 +232,16 @@ function clear(element, answerElement) {
         el.classList.remove('incorrect-answer', 'correct-answer', 'selected-option');
         el.querySelectorAll('.feedback-icon').forEach(node => node.remove());
     });
+}
+
+// Display results
+function result(){
+    resultElement.style.display = 'block'
+    quiz.style.display = 'none'
+    document.getElementById('score').textContent = points;
+    document.getElementById('totalQuestions').textContent = questionCount-1;
+
+    document.querySelector('.result-subject-icon').classList.add(subjectTitle.background);
+    document.getElementById('result-subject-icon').src = subjectTitle.icon;
+    document.getElementById('subjectTitle').textContent = subjectTitle.text;
 }
