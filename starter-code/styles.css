@@ -470,6 +470,10 @@ input:checked + .slider:before {
     margin-bottom: 3rem;
 }
 
+.progress-bar.light {
+    background-color: #fff;
+}
+
 .bar {
     width: 1%;
     height: 8px;

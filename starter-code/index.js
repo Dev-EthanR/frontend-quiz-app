@@ -43,17 +43,18 @@ mainMenu();
 
 // light mode / dark mode
 toggleSwitch.addEventListener('change', function() {
+    const progressBarLight = document.querySelector('.progress-bar');
     let mode = this.checked ? 'light' : 'dark';
-    localStorage.setItem('theme', this.checked);
+
     const lightIcon = document.getElementById('sun-icon');
     const darkIcon = document.getElementById('moon-icon');
-
+    
     lightIcon.src=`assets/images/icon-sun-${mode}.svg`;
     darkIcon.src=`assets/images/icon-moon-${mode}.svg`
 
     buttons.forEach(button => button.classList.toggle('light'));
     document.body.classList.toggle('light');
-
+    progressBarLight.classList.toggle('light');
     for(let i = 0; i < heading2.length; i++) {
         heading2[i].classList.toggle('light');
     }
