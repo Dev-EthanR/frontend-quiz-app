@@ -250,7 +250,7 @@ function progressBar(questionMaximum) {
     const bar = document.getElementById('progressBar');
     const targetWidth = (questionCount / questionMaximum) * 100;
     let currentWidth = parseFloat(bar.style.width) || 0;
-    const duration = 300; // animation time in ms
+    const duration = 300; 
     const startTime = performance.now();
 
     function animate(time) {
