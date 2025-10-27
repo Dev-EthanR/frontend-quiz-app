@@ -361,7 +361,8 @@ input:checked + .slider:before {
     color: var(--grey-500);
 }
 
-.btn:hover:not(.correct-answer):not(.incorrect-answer) {
+.btn:hover:not(.correct-answer):not(.incorrect-answer),
+.btn:focus:not(.correct-answer):not(.incorrect-answer) {
     outline: 2px solid hsl(277, 91%, 70%);
 }
 
@@ -370,7 +371,8 @@ input:checked + .slider:before {
     outline: none;
 }
 
-.btn:hover:not(.correct-answer):not(.incorrect-answer) .quiz-icons{
+.btn:hover:not(.correct-answer):not(.incorrect-answer) .quiz-icons,
+.btn:focus:not(.correct-answer):not(.incorrect-answer) .quiz-icons  {
     background-color: hsl(277, 91%, 70%);
     color: #fff;
 }
