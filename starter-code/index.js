@@ -150,6 +150,7 @@ function displayQuestions(question) {
     currentQuestion.answer = question[questionCount - 1].answer;
     currentQuestion.question = question;
     currentQuestion.handleOptions();
+    progressBar(question.length);
     setupOptions();
 }
 
@@ -208,7 +209,6 @@ function disableDoubleSelectionDuringAnswerState(){
 
 // check the users answer
 function checkAnswer(userAnswer, actualAnswer, element, correctAnswerElement) {
-
     if(actualAnswer === userAnswer) {
         element.classList.add('correct-answer');  
         element.appendChild(correctSpanElement);
@@ -244,4 +244,26 @@ function result(){
     document.querySelector('.result-subject-icon').classList.add(subjectTitle.background);
     document.getElementById('result-subject-icon').src = subjectTitle.icon;
     document.getElementById('subjectTitle').textContent = subjectTitle.text;
+}
+
+function progressBar(questionMaximum) {
+    const bar = document.getElementById('progressBar');
+    const targetWidth = (questionCount / questionMaximum) * 100;
+    let currentWidth = parseFloat(bar.style.width) || 0;
+    const duration = 300; // animation time in ms
+    const startTime = performance.now();
+
+    function animate(time) {
+        const elapsed = time - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const newWidth = currentWidth + (targetWidth - currentWidth) * progress;
+        bar.style.width = newWidth + '%';
+
+        if (progress < 1) {
+        requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+
 }

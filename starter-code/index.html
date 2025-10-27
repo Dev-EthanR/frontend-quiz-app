@@ -85,40 +85,49 @@
     </div>
     <!-- Quiz question start -->
     <section class="container" id="quiz">
-      <div>
-        <h2 id="questionNumber">Question 1 of 10</h2>
-        <h3 id="question">Question</h3>
-      </div>
-      <div class="quiz-subjects">
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">A</span>
-            <span id="option-1">HTML</span>
+      <div class="quiz-section">
+        <div class="question-display-header">
+          <div>
+            <h2 id="questionNumber">Question 1 of 10</h2>
+            <h3 id="question">Question</h3>
           </div>
-        </button>
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">B</span>
-            <span id="option-2">CSS</span>
+          <div class="progress-bar">
+            <div class="bar" id="progressBar"></div>
           </div>
-        </button>
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">C</span>
-            <span id="option-3">JavaScript</span>
-          </div>
-        </button>
-        <button class="btn answer-state">
-          <div class="option-btn">
-            <span class="quiz-icons grey">D</span>
-            <span id="option-4">Accessibility</span>
-          </div>
-        </button>
-        <button class="btn btn-answer" id="submitAnswer">Submit answer</button>
-        <div class="error-status" id="error">
-          <div class="flex-center">
-            <img src="assets/images/icon-error.svg" alt="" />
-            <p id="error-msg"></p>
+        </div>
+        <div class="quiz-subjects">
+          <button class="btn answer-state">
+            <div class="option-btn">
+              <span class="quiz-icons grey">A</span>
+              <span id="option-1">HTML</span>
+            </div>
+          </button>
+          <button class="btn answer-state">
+            <div class="option-btn">
+              <span class="quiz-icons grey">B</span>
+              <span id="option-2">CSS</span>
+            </div>
+          </button>
+          <button class="btn answer-state">
+            <div class="option-btn">
+              <span class="quiz-icons grey">C</span>
+              <span id="option-3">JavaScript</span>
+            </div>
+          </button>
+          <button class="btn answer-state">
+            <div class="option-btn">
+              <span class="quiz-icons grey">D</span>
+              <span id="option-4">Accessibility</span>
+            </div>
+          </button>
+          <button class="btn btn-answer" id="submitAnswer">
+            Submit answer
+          </button>
+          <div class="error-status" id="error">
+            <div class="flex-center">
+              <img src="assets/images/icon-error.svg" alt="" />
+              <p id="error-msg"></p>
+            </div>
           </div>
         </div>
       </div>
