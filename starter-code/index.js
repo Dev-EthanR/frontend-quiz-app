@@ -246,6 +246,7 @@ function result(){
     document.getElementById('subjectTitle').textContent = subjectTitle.text;
 }
 
+// progress bar
 function progressBar(questionMaximum) {
     const bar = document.getElementById('progressBar');
     const targetWidth = (questionCount / questionMaximum) * 100;
