@@ -38,27 +38,38 @@ let questionCount = 1;
 let points = 0;
 let currentScreen;
 let answerSelected = false;
+let theme = localStorage.getItem('theme') || 'dark';
 
 mainMenu();
-
+toggleTheme();
 // light mode / dark mode
-toggleSwitch.addEventListener('change', function() {
-    const progressBarLight = document.querySelector('.progress-bar');
-    let mode = this.checked ? 'light' : 'dark';
+function toggleTheme(){  
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    theme = savedTheme;
+    
 
+    themeAttributes(savedTheme)
+    toggleSwitch.checked = savedTheme === 'light';
+
+    
+    toggleSwitch.addEventListener('change', function() {
+ 
+        let themeMode = this.checked ? 'light' : 'dark';
+        theme = themeMode;
+        localStorage.setItem('theme', themeMode);
+
+        themeAttributes(themeMode)
+    });
+}
+
+function themeAttributes(checkTheme) {
     const lightIcon = document.getElementById('sun-icon');
     const darkIcon = document.getElementById('moon-icon');
-    
-    lightIcon.src=`assets/images/icon-sun-${mode}.svg`;
-    darkIcon.src=`assets/images/icon-moon-${mode}.svg`
 
-    buttons.forEach(button => button.classList.toggle('light'));
-    document.body.classList.toggle('light');
-    progressBarLight.classList.toggle('light');
-    for(let i = 0; i < heading2.length; i++) {
-        heading2[i].classList.toggle('light');
-    }
-});
+    document.body.classList.toggle('light', checkTheme === 'dark');
+    lightIcon.src=`assets/images/icon-sun-${checkTheme}.svg`;
+    darkIcon.src=`assets/images/icon-moon-${checkTheme}.svg`;
+}
 
 
 // call the data from the menu that was pressed
