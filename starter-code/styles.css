@@ -97,7 +97,7 @@ body.light {
     color: var(--blue-900);
 }
 
-h2.light {
+body.light h2 {
     color: var(--grey-500);
 }
 .sub-heading {
@@ -315,7 +315,7 @@ input:checked + .slider:before {
     border-radius: 12px;
 }
 
-.btn.light:not(.btn-answer) {
+body.light .btn:not(.btn-answer) {
     background-color: #fff;
 }
 
@@ -470,7 +470,7 @@ input:checked + .slider:before {
     margin-bottom: 3rem;
 }
 
-.progress-bar.light {
+body.light .progress-bar {
     background-color: #fff;
 }
 
